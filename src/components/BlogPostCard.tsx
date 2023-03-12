@@ -4,6 +4,7 @@ import {SplitLayout} from '@salt-ds/lab';
 import styles from '@/styles/BlogPostCard.module.css'
 import {useRouter} from 'next/router'
 import clsx from "clsx";
+import Image from "next/image";
 
 type BlogItemType = {
     theme: string,
@@ -27,7 +28,7 @@ const BlogItemCard = ({theme, title, snippet, img, date, stackblitz, demo, draft
             <H2>{title}</H2>
             <p>{draft? 'Demo coming up' : `Posted on ${date}`}</p>
             <StackLayout>
-                <img src={!draft? `/assets/${img}.png` : `https://picsum.photos/750/300?random=${img}`}/>
+                <Image src={!draft? `/assets/${img}.png` : `https://picsum.photos/750/300?random=${img}`} alt={`${title} app screenshot`}/>
                 <p className="text-content">{snippet}</p>
             </StackLayout>
             <FlexItem align="stretch">

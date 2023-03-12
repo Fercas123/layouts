@@ -50,7 +50,7 @@ const RightHeader = () => {
 };
 
 export default function SingleColumn() {
-    const [blogPostData, setData] = useState([]);
+    const [blogPostData, setData] = useState<SingleColumnItemType[]>([]);
 
     const generateData = () => {
         const fakeData: SingleColumnItemType[] = [];
@@ -65,8 +65,6 @@ export default function SingleColumn() {
                 snippet: faker.lorem.lines(),
             });
         });
-
-        // @ts-ignore
         setData(fakeData);
     };
 
@@ -104,8 +102,8 @@ export default function SingleColumn() {
                             Salt Design System and allows for the creation of flexible and responsive layouts in React
                             applications.
                         </Text>
-                        {blogPostData.map((itemProps, index) => (
-                            <SingleColumnCard key={index} {...itemProps} />
+                        {blogPostData.map((blogpost, index) => (
+                            <SingleColumnCard key={index} {...blogpost}/>
                         ))}
                     </StackLayout>
                 </BorderItem>
