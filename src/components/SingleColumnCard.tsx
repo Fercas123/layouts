@@ -9,7 +9,6 @@ import { SplitLayout } from '@salt-ds/lab';
 import styles from '@/styles/BlogPostCard.module.css'
 import clsx from "clsx";
 import {faker} from "@faker-js/faker";
-import Image from "next/image";
 
 const LeftSpan = () => (
     <div>
@@ -40,7 +39,7 @@ const SingleColumnCard = (props: SingleColumnItemType) => {
             <H2>{title}</H2>
             <p>{`Posted on ${date}`}</p>
             <StackLayout>
-                <Image src={`https://picsum.photos/750/300?random=${img}`} alt={"placeholder image"}/>
+                <img src={`https://picsum.photos/750/300?random=${img}`} alt={"placeholder image"}/>
                 <p className="text-content">{snippet}</p>
                 <FlexItem align="end">
                     <Button>Keep reading</Button>{' '}
