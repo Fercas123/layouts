@@ -1,0 +1,26 @@
+.authorCard {
+    margin: auto auto calc(9 * var(--salt-size-unit));
+    /* this could also be handled by responsiveProps in stack alignment */
+    container-name: card;
+    container-type: inline-size;
+}
+.textContent {
+    /* it is recommended for text not to be longer than 75ch for readability */
+    max-width: min(100%, 75ch);
+}
+
+/*TODO: fix the below lines once classname orders have been fixed*/
+.authorInfo {
+    align-items: center;
+}
+.authorAvatar {
+    align-self: center;
+}
+@container card (min-width: 540px) {
+    .authorInfo {
+        align-items: flex-start;
+    }
+    .authorAvatar {
+        align-self: baseline;
+    }
+}

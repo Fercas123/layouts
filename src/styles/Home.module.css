@@ -1,0 +1,28 @@
+/* Full Page component classes */
+.fullPage {
+    /* Height always needs to be set in BorderLayout relevant to the parent or viewport. */
+    height: 100cqh;
+}
+
+.footer,
+.header {
+    /* How do we decide spacing? */
+    padding-block: calc(2 * var(--salt-size-unit));
+    padding-inline: calc(3 * var(--salt-size-unit));
+}
+.header {
+    border-bottom: 1px solid var(--salt-palette-neutral-primary-border);
+}
+.footer {
+    border-top: 1px solid var(--salt-palette-neutral-primary-border);
+    text-align: center;
+}
+
+.mainContent {
+    /* Should this be default in borderItem of at least easily configurable? */
+    overflow-y: scroll;
+}
+.mainContainer {
+    max-width: 1440px;
+    margin: auto;
+}
